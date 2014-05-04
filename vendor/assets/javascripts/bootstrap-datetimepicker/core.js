@@ -65,7 +65,7 @@
       if (!this.format) {
         if (this.isInput) this.format = this.$element.data('format');
         else this.format = this.$element.find('input').data('format');
-        if (!this.format) this.format = 'MM/dd/yyyy';
+        if (!this.format) this.format = 'DD/MM/yyyy';
       }
       this._compileFormat();
       if (this.component) {
@@ -276,16 +276,16 @@
       offset.top = offset.top + this.height;
 
       var $window = $(window);
-      
+
       if ( this.options.width != undefined ) {
         this.widget.width( this.options.width );
       }
-      
+
       if ( this.options.orientation == 'left' ) {
         this.widget.addClass( 'left-oriented' );
         offset.left   = offset.left - this.widget.width() + 20;
       }
-      
+
       if (this._isInFixed()) {
         position = 'fixed';
         offset.top -= $window.scrollTop();
